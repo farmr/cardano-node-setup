@@ -1,0 +1,30 @@
+ global:
+   scrape_interval:     15s
+   external_labels:
+     monitor: 'cardano-node-monitor'
+
+ scrape_configs:
+   - job_name: 'FARMRBP_node_block' # To scrape data from a node exporter to monitor your linux host metrics.
+     scrape_interval: 5s
+     static_configs:
+       - targets: ['142.165.136.106:9100']
+   - job_name: 'FARMRBP_cardano_block' # To scrape data from the cardano node
+     scrape_interval: 5s
+     static_configs:
+       - targets: ['142.165.136.106:12798']
+   - job_name: 'FARMRELAY01_cardano_relay' # To scrape data from the cardano node
+     scrape_interval: 5s
+     static_configs:
+       - targets: ['142.165.136.106:12799']   
+   - job_name: 'FARMRELAY01_node_relay' # To scrape data from a node exporter to monitor your linux host metrics.
+     scrape_interval: 5s
+     static_configs:
+       - targets: ['142.165.136.106:9101']
+   - job_name: 'FARMRELAY02_cardano_relay' # To scrape data from the cardano node
+     scrape_interval: 5s
+     static_configs:
+       - targets: ['142.165.136.106:12800']   
+   - job_name: 'FARMRELAY02_node_relay' # To scrape data from a node exporter to monitor your linux host metrics.
+     scrape_interval: 5s
+     static_configs:
+       - targets: ['142.165.136.106:9102']
